@@ -1,5 +1,6 @@
 default:
   models:
+    Saloon: read
     Team: read
     Membership:
       - read
@@ -28,6 +29,7 @@ admin:
     - admin
     - editor
   models:
+    Saloon: manage
     Team: manage
     Membership: manage
     Scaffolding::AbsolutelyAbstract::CreativeConcept: manage

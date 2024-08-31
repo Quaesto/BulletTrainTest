@@ -1,0 +1,93 @@
+en:
+  saloons: &saloons
+    label: &label Saloons
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-cut
+    buttons: &buttons
+      new: Add New Saloon
+      create: Create Saloon
+      edit: Edit Saloon
+      update: Update Saloon
+      destroy: Remove Saloon
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{saloon_name}? This will also remove any child resources and can't be undone.
+    saloon:
+      buttons: *buttons
+    fields: &fields
+      id:
+        heading: Saloon ID
+      team_id:
+        heading: Team ID
+      name:
+        _: &name Name
+        label: *name
+        heading: *name
+        api_title: *name
+        api_description: *name
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Saloons"
+      index: "List Saloons"
+      create: "Add a New Saloon"
+      member_actions: "Actions for an Individual Saloon"
+      show: "Retrieve a Saloon"
+      update: "Update a Saloon"
+      destroy: "Delete a Saloon"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Saloons"
+      contexts:
+        team:
+          header: Saloons
+          description: Below is a list of Saloons that have been added for %{team_name}.
+          description_empty: No Saloons have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{saloon_name}"
+      header: Saloon Details
+      description: Below are the details we have for %{saloon_name}.
+      manage_description: You'll also find options for updating these details or removing %{saloon_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Saloon for %{team_name}"
+      header: New Saloon Details
+      description: Please provide the details of the new Saloon you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{saloon_name}"
+      header: Edit Saloon Details
+      description: You can update the details or settings for %{saloon_name} below.
+      form: *form
+    notifications:
+      created: Saloon was successfully created.
+      updated: Saloon was successfully updated.
+      destroyed: Saloon was successfully destroyed.
+  account:
+    saloons: *saloons
+  activerecord:
+    attributes:
+      saloon:
+        name: *name
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
